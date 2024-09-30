@@ -16,7 +16,7 @@ def lexer(text):
     text = text.lower()
     token_specification = [
         (ACTION, r'\b(?:masuk|tambah|keluar|bayar)\b'),  # Actions
-        (AMOUNT, r'\b\d+\.?\d*\s*rb?\b'),                # Amounts (e.g., 20rb, 20.000)
+        (AMOUNT, r'\b\d{1,3}(?:\.\d{3})*(?:rb)?\b'),                # Amounts (e.g., 20rb, 20.000)
         # Use a capturing group for 'dari' and 'ke'
         (SOURCE, r'dari\s+([^k]+)'),                     # Capture after 'dari' up to 'ke'
         (DESTINATION, r'ke\s+([^u]+)'),                  # Capture after 'ke' up to 'utk|untuk'
@@ -95,7 +95,8 @@ commands = [
     "Bayar 50.000 ke bri",                                     # Only action, amount, and destination
     "Tambah 100rb ke kas",                                   # Only action, amount, and source
     "Masuk 200rb dari ortu ke mandiri",                        # With both source and destination
-    "Keluar 20.000"                                            # Error, neither source nor destination
+    "Keluar 20.000",                                            # Error, neither source nor destination
+    "Keluar 60rb dari bri teman utk beli gacoan"
 ]
 
 for command in commands:
