@@ -11,7 +11,6 @@ NOTES = 'NOTES'
 
 # Grammar definitions
 ACTIONS = ["masuk", "tambah", "keluar", "bayar"]
-UTK_VARIANTS = ["utk", "untuk"]
 
 # Lexer: Tokenize the input based on our grammar rules
 def lexer(text):
@@ -20,7 +19,7 @@ def lexer(text):
         (ACTION, r'\b(?:masuk|tambah|keluar|bayar)\b'),  # Actions
         (AMOUNT, r'\b\d{1,3}(?:\.\d{3})*(?:rb)?\b'),                # Amounts (e.g., 20rb, 20.000)
         # Use a capturing group for 'dari' and 'ke'
-        (SOURCE, r'dari\s+([^k]+)'),                     # Capture after 'dari' up to 'ke'
+        (SOURCE, r'(?<=dari\s)(?:(?!\s+ke\s+|\s+utk\s+|\s+untuk\s+).)*'),                     # Capture after 'dari' up to 'ke'
         # (SOURCE, r'dari\s+^(?:(?!ke).)* |dari\s+^(?:(?!utk).)*|dari\s+^(?:(?!utk).)*  '), 
         (DESTINATION, r'ke\s+([^u]+)'),                  # Capture after 'ke' up to 'utk|untuk'
         (NOTES, r'(?:utk|untuk)\s+(.+)'),                # Capture everything after 'utk/untuk'
@@ -126,7 +125,7 @@ def add_parsed_command(new_command, filename='parsed_commands.json'):
     balance = calculate_balance(parsed_commands)
     
     # Show the balance
-    print(f"Transaction added. Current Balance (Saldo): Rp {balance:,}")
+    print(f"Transaksi ditambahkan, saldo sekarang: Rp {balance:,}")
 
 def parse_amount(amount_str):
     if '.' in amount_str:
@@ -154,46 +153,13 @@ commands = [
     "Keluar 60rb dari bri teman utk beli gacoan"
 ]
 
-# for command in commands:
-#     try:
-#         print(f"\nCommand: {command}")
-#         # Tokenize the input
-#         tokens = lexer(command)
-#         print(f"Tokens: {tokens}")
-        
-#         # Parse the tokenized input
-#         parser = Parser(tokens)
-#         parsed_command = parser.parse_command()
-#         print(f"Parsed Command: {parsed_command}")
-#         # Convert the dictionary to a JSON string
-#         json_data = json.dumps(parsed_command, indent=4)
-#         with open('parsed_command.json', 'w') as json_file:
-#             json_file.write(json_data)
-#     except SyntaxError as e:
-#         print(f"Syntax Error: {e}")
-# Example of a new parsed command
-new_command = {
-    'action': 'keluar',
-    'amount': '60rb',
-    'source': 'bri',
-    'destination': None,
-    'notes': 'beli gacoan'
-}
-new_command2 = {
-    'action': 'masuk',
-    'amount': '120rb',
-    'source': 'bri',
-    'destination': None,
-    'notes': 'transfer'
-}
+def _main_() : 
+    command = input("Masukkan laporan keuangan : ")
+    tokens = lexer(command)
+    parser = Parser(tokens)
+    pres = parser.parse_command()
+    add_parsed_command(pres)
+    print()
+    print("Catatan Keuangan telah diperbaharui.")
 
-# Add the new parsed command to the JSON file
-# add_parsed_command(new_command)
-# add_parsed_command(new_command2)
-command = input()
-tokens = lexer(command)
-parser = Parser(tokens)
-pres = parser.parse_command()
-add_parsed_command(pres)
-print()
-print("Parsed command added to the JSON file.")
+_main_()

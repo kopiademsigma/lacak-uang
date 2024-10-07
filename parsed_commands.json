@@ -68,5 +68,103 @@
         "source": "dana ut",
         "destination": null,
         "notes": "utang print uts aji"
+    },
+    {
+        "action": "bayar",
+        "amount": "40.000",
+        "source": "dari dana",
+        "destination": null,
+        "notes": "utang print uts aji"
+    },
+    {
+        "action": "bayar",
+        "amount": "60rb",
+        "source": "dari kas",
+        "destination": null,
+        "notes": "beli lampu"
+    },
+    {
+        "action": "bayar",
+        "amount": "80rb",
+        "source": "dari kas",
+        "destination": "yazid",
+        "notes": "lunasin hutang"
+    },
+    {
+        "action": "bayar",
+        "amount": "90rb",
+        "source": "dari bri",
+        "destination": "floppa",
+        "notes": "beli ginjal"
+    },
+    {
+        "action": "bayar",
+        "amount": "90rb",
+        "source": "kas",
+        "destination": "floppa",
+        "notes": "lunasin hutang"
+    },
+    {
+        "action": "masuk",
+        "amount": "500rb",
+        "source": "ortu",
+        "destination": null,
+        "notes": "syahriah pesantren"
+    },
+    {
+        "action": "keluar",
+        "amount": "200rb",
+        "source": null,
+        "destination": null,
+        "notes": "pembayaran course"
+    },
+    {
+        "action": "masuk",
+        "amount": "200",
+        "source": null,
+        "destination": null,
+        "notes": null
+    },
+    {
+        "action": "masuk",
+        "amount": "400",
+        "source": null,
+        "destination": null,
+        "notes": null
+    },
+    {
+        "action": "keluar",
+        "amount": "5",
+        "source": null,
+        "destination": null,
+        "notes": null
+    },
+    {
+        "action": "masuk",
+        "amount": "5.000",
+        "source": null,
+        "destination": "bri",
+        "notes": null
+    },
+    {
+        "action": "keluar",
+        "amount": "60rb",
+        "source": null,
+        "destination": null,
+        "notes": "pembayaran sigma"
+    },
+    {
+        "action": "masuk",
+        "amount": "60rb",
+        "source": null,
+        "destination": "bri",
+        "notes": null
+    },
+    {
+        "action": "masuk",
+        "amount": "50rb",
+        "source": null,
+        "destination": "bri",
+        "notes": null
     }
 ]
