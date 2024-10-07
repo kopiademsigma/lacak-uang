@@ -1,0 +1,72 @@
+[
+    {
+        "action": "masuk",
+        "amount": "200rb",
+        "source": null,
+        "destination": "bri",
+        "notes": null
+    },
+    {
+        "action": "masuk",
+        "amount": "200rb",
+        "source": "ayah",
+        "destination": "bri",
+        "notes": null
+    },
+    {
+        "action": "masuk",
+        "amount": "60.000",
+        "source": null,
+        "destination": "bri",
+        "notes": null
+    },
+    {
+        "action": "masuk",
+        "amount": "600.000",
+        "source": null,
+        "destination": "bri",
+        "notes": null
+    },
+    {
+        "action": "keluar",
+        "amount": "300rb",
+        "source": null,
+        "destination": null,
+        "notes": "beli beras"
+    },
+    {
+        "action": "keluar",
+        "amount": "20rb",
+        "source": null,
+        "destination": null,
+        "notes": "makan"
+    },
+    {
+        "action": "keluar",
+        "amount": "3rb",
+        "source": null,
+        "destination": null,
+        "notes": "beli cilok"
+    },
+    {
+        "action": "keluar",
+        "amount": "3rb",
+        "source": null,
+        "destination": null,
+        "notes": "beli cilok"
+    },
+    {
+        "action": "bayar",
+        "amount": "20",
+        "source": null,
+        "destination": null,
+        "notes": null
+    },
+    {
+        "action": "bayar",
+        "amount": "40.000",
+        "source": "dana ut",
+        "destination": null,
+        "notes": "utang print uts aji"
+    }
+]
