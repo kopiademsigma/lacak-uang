@@ -166,5 +166,12 @@
         "source": null,
         "destination": "bri",
         "notes": null
+    },
+    {
+        "action": "tambah",
+        "amount": "60rb",
+        "source": null,
+        "destination": "bri",
+        "notes": null
     }
 ]
